@@ -1,12 +1,36 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React,{useState} from 'react';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import Footer from './components/Footer';
+import Header from './components/Header';
+import * as Font from "expo-font";
+import AppLoading from "expo-app-loading";
+
+const fetchFonts = () => {
+  return Font.loadAsync({
+    "gotham-bold": require("./assets/fonts/Gotham-Bold.otf"),
+    "gotham-book": require("./assets/fonts/GothamBook.ttf"),
+    "gotham-medium" : require('./assets/fonts/GothamMedium.ttf')
+  });
+};
+
 
 export default function App() {
+  const [dataLoaded, setDataLoaded] = useState(false);
+
+  if (!dataLoaded) {
+    return (
+      <AppLoading
+        startAsync={fetchFonts}
+        onFinish={() => setDataLoaded(true)}
+        onError={console.warn}
+      />
+    );
+  }
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <Header></Header>
+      <Footer></Footer>
     </View>
   );
 }
@@ -14,8 +38,13 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    paddingTop: 30,
+    backgroundColor:"#000",
+
   },
+  headerContainer: {
+
+    flexDirection: 'row',
+    justifyContent: 'space-between'
+  }
 });
