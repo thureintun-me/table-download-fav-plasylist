@@ -25,6 +25,7 @@ const Song = (props)=>{
 const styles = StyleSheet.create(
     {
         container:{
+            
             marginTop:10, 
            
         },
@@ -49,8 +50,8 @@ const styles = StyleSheet.create(
         myMargin:{
             marginTop:13,
             width:'260px', 
-            height:1, 
-            backgroundColor:"rgba(255,255,255,0.4)" 
+            height:'0.1px', 
+            backgroundColor:"rgba(255,255,255,0.08)" 
         },
         imageContainer:{
          width:52,

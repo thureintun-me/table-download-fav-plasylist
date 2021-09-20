@@ -15,8 +15,8 @@ const Playlist = (props)=>{
             </View>
             <View style={styles.playlistContainer}>
                 <PlaylistContainer style={styles.bottom}></PlaylistContainer>
-                <PlaylistContainer></PlaylistContainer>
-                <PlaylistContainer></PlaylistContainer>
+                <PlaylistContainer style={styles.bottom}></PlaylistContainer>
+                <PlaylistContainer style={styles.bottom}></PlaylistContainer>
             </View>
             </View>
             

@@ -46,18 +46,19 @@ const styles = StyleSheet.create(
         },
         textContainer: {
 
-            width:260,
+            width:275,
             height:48.3,
             paddingTop: 10,
             marginLeft: 28,
-            borderBottomColor: 'rgba(255,255,255,0.4)',
+            borderBottomColor: 'rgba(255,255,255,0.08)',
             borderBottomWidth: 1,
         },
         title: {
             
             fontFamily:"gotham-book",
             fontSize:14,
-            color:'white'
+            color:'white',
+            marginBottom:5,
         },
         totalSong: {
             
